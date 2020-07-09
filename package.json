@@ -1,0 +1,12 @@
+{
+  "name": "dd-sqs-quooler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sqs-quooler": "1.6.0"
+  }
+}
