@@ -4,9 +4,9 @@
 
 <h1 align="center">dd-sqs-quooler</h1>
 
-This project aims to extends the project [sqs-quooler](https://github.com/pagarme/sqs-quooler) adding Datadog APM traces to every item being processed by the method `startProcessing`
+This project aims to extend the project [sqs-quooler](https://github.com/pagarme/sqs-quooler) adding Datadog APM traces to every item being processed by the method `startProcessing`
 
-For further information how to use, please head to the [official docs](https://github.com/pagarme/sqs-quooler/blob/master/README.md)
+For further information how to use please head to the [official docs](https://github.com/pagarme/sqs-quooler/blob/master/README.md)
 
 ## Requirements
 The project must be ready to start collecting traces to Datadog with all environment variables filled.
