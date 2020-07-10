@@ -1,11 +1,19 @@
 {
   "name": "dd-sqs-quooler",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "main": "index.js",
-  "keywords": [],
+  "keywords": [
+    "sqs",
+    "sqs-quooler",
+    "datadog",
+    "dd",
+    "aws",
+    "apm",
+    "metrics"
+  ],
   "author": "lucianopf",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "sqs-quooler": "1.6.0"
   }
