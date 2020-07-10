@@ -1,6 +1,6 @@
 {
   "name": "dd-sqs-quooler",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "",
   "main": "index.js",
   "keywords": [
@@ -13,6 +13,14 @@
     "metrics"
   ],
   "author": "lucianopf",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucianopf/dd-sqs-quooler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lucianopf/dd-sqs-quooler/issues"
+  },
+  "homepage": "https://github.com/lucianopf/dd-sqs-quooler#readme",
   "license": "MIT",
   "dependencies": {
     "sqs-quooler": "1.6.0"

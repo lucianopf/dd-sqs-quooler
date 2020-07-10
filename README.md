@@ -11,6 +11,11 @@ For further information how to use please head to the [official docs](https://gi
 ## Requirements
 The project must be ready to start collecting traces to Datadog with all environment variables filled.
 
+## Installation
+
+```sh
+npm install -S dd-sqs-quooler
+```
 
 ## See in action
 ![Screenshot-20200709154607-1373x865](https://user-images.githubusercontent.com/8251208/87078671-642f6080-c1fb-11ea-831b-9c8bb555ac88.png)
