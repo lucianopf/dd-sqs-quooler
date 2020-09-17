@@ -20,9 +20,9 @@ class DDQueue extends Queue {
   }
 
   startProcessing (processFunction, options = {}) {
-    const injectedTracedFunction = (data) => {
+    const injectedTracedFunction = (data, message = {}) => {
       injectTags(data)
-      return processFunction(data)
+      return processFunction(data, message)
     }
   
     const tracedFunction = tracer.wrap(

@@ -1,6 +1,6 @@
 {
   "name": "dd-sqs-quooler",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "",
   "main": "index.js",
   "keywords": [
@@ -23,6 +23,7 @@
   "homepage": "https://github.com/lucianopf/dd-sqs-quooler#readme",
   "license": "MIT",
   "dependencies": {
+    "dd-trace": "0.26.0",
     "sqs-quooler": "1.6.1"
   }
 }
