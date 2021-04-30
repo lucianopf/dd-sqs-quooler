@@ -24,6 +24,6 @@
   "license": "MIT",
   "dependencies": {
     "dd-trace": "0.31.1",
-    "sqs-quooler": "1.8.0"
+    "sqs-quooler": "1.9.0"
   }
 }
