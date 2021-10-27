@@ -6,32 +6,28 @@ const tracer = require('dd-trace').init({
 
 const { Queue } = sqsQuooler
 
-function injectTags (data) {
-  const scope = tracer.scope()
-
-  if (scope.active()) {
-    scope.active().addTags({ data })
-  }
-}
-
 class DDQueue extends Queue {
   constructor (options) {
     super(options)
   }
 
   startProcessing (processFunction, options = {}) {
-    const injectedTracedFunction = (data, message = {}) => {
-      injectTags(data)
-      return processFunction(data, message)
+    const ddProcess = (data, message) => {
+      const childOf = tracer.extract('text_map', JSON.parse(message.MessageAttributes._datadog.StringValue))
+      const tracedFunction = tracer.wrap(
+        'sqs-quooler.process',
+        {
+          childOf: childOf,
+          tags: { data },
+        },
+        processFunction
+      )
+
+      return tracedFunction(data, message)
     }
   
-    const tracedFunction = tracer.wrap(
-      'sqs-quooler.process',
-      injectedTracedFunction
-    )
-  
     return super.startProcessing(
-      tracedFunction,
+      ddProcess,
       options
     )
   }
