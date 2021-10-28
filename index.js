@@ -13,11 +13,16 @@ class DDQueue extends Queue {
 
   startProcessing (processFunction, options = {}) {
     const ddProcess = (data, message) => {
-      const childOf = tracer.extract('text_map', JSON.parse(message.MessageAttributes._datadog.StringValue))
+      let childOf = undefined
+
+      try {
+        childOf = tracer.extract('text_map', JSON.parse(message.MessageAttributes._datadog.StringValue))
+      } catch (_){}
+      
       const tracedFunction = tracer.wrap(
         'sqs-quooler.process',
         {
-          childOf: childOf,
+          childOf,
           tags: { data },
         },
         processFunction
