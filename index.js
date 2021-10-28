@@ -18,12 +18,13 @@ class DDQueue extends Queue {
       try {
         childOf = tracer.extract('text_map', JSON.parse(message.MessageAttributes._datadog.StringValue))
       } catch (_){}
-      
+
       const tracedFunction = tracer.wrap(
         'sqs-quooler.process',
         {
           childOf,
           tags: { data },
+          resource: options.resource || this.options.endpoint.split('/').pop(),
         },
         processFunction
       )
